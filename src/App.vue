@@ -1,17 +1,40 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app">
+    <Timeline :events="eventsData" />
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Timeline from './components/Timeline.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
-}
+    Timeline,
+  },
+  data() {
+    return {
+      eventsData: [
+        {
+          title: 'Event 1',
+          date: '2022-01-15',
+          description: 'Description for Event 1',
+        },
+        {
+          title: 'Event 2',
+          date: '2022-02-20',
+          description: 'Description for Event 2',
+        },
+        {
+          title: 'Event 3',
+          date: '2022-03-10',
+          description: 'Description for Event 3',
+        },
+        // Add more events as needed
+      ],
+    };
+  },
+};
 </script>
 
 <style>
